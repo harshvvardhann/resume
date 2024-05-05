@@ -1,0 +1,1118 @@
+<!-- <html>
+
+<head>
+    <script type="text/javascript">
+        function getval() {
+            var ret = prompt("Enter your name: ", "Your name here");
+            document.write("you entered " + ret);
+        }
+    </script>
+</head>
+
+<body>
+    <input type="button" onclick="getval()" value="OK" />
+</body>
+
+</html> -->
+<!-- 
+
+
+
+<html>
+
+<head>
+    <script type="text/javascript">
+        function fact(n) {
+            if (n == 1)
+                return (1);
+            else {
+                factorial = n * fact(n - 1);
+                return factorial;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <script type="text/javascript">
+        x = 3;
+        sum = 0;
+        for (n = 1; n <= 4; n++) {
+            sum = sum + Math.pow(x, n) / fact(n);
+        }
+        total = 1 + sum;
+        document.write(total);
+    </script>
+</body>
+
+</html> -->
+
+
+<!-- <html>
+
+<head>
+    <script type="text/javascript">
+        n = 6661;
+        while (n > 9) {
+            sum = 0;
+            while (n > 0) {
+                i = n % 10;
+                n = parseInt(n / 10);
+                sum = sum + i;
+            }
+            document.write(sum + "<br/>");
+            n = sum;
+        }
+        if (n == 1) {
+            document.write("NUMBER IS A LUCKY ONE");
+        }
+        else {
+            document.write("NUMBER IS A UNLUCKY ONE");
+        }
+    </script>
+</head>
+
+<body>
+</body>
+
+</html> -->
+
+
+
+<!-- 
+<html>
+
+<head>
+    <title> Bubble sort</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        arr = new Array();
+        for (i = 0; i < 5; i++) {
+            arr[i] = parseInt(prompt("enter value"));
+        }
+        //arr=[30,67,12,4,29];
+        document.write("elements before swap: " + "</br>");
+        for (i = 0; i < arr.length; i++)
+            document.write(arr[i] + "</br>");
+        for (i = 0; i < arr.length; i++) {
+            for (j = 0; j < arr.length - 1; j++) {
+                if (arr[i] < arr[j]) {
+                    temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+        document.write("elements after swap: " + "</br>");
+        for (i = 0; i < arr.length; i++)
+            document.write(arr[i] + "</br>");
+    </script>
+</body>
+
+</html> -->
+
+
+<!-- <html>
+
+<head>
+</head>
+
+<body>
+    <script type="text/javascript">
+        s1 = "this is my first program of inbuild functions";
+        s2 = "Math and string function";
+        s3 = " ";
+        document.write("Square root:: " + Math.sqrt(9) + "</br>");
+        document.write("Absoulte ::" + Math.abs(-5) + "</br>");
+        document.write("Ceiling ::" + Math.ceil(-0.01) + "</br>");
+        document.write(" floor :: " + Math.floor(-1.11) + "</br>");
+        document.write(s1.charAt(1) + "</br>");
+        document.write(s1.charCodeAt(4) + "</br>");
+        document.write(s1.concat(s2) + "</br>");
+        document.write(s1.replace("first", "last") + "</br>");
+        document.write(s1.split(s3) + "</br>");
+        document.write(s1.substr(2, 5) + "</br>");
+        document.write(s1.toUpperCase() + "</br>");
+        document.write(s2.toLowerCase() + "</br>");
+    </script>
+</body>
+
+</html> -->
+
+
+<!-- 
+
+
+<html>
+
+<head>
+    <script type="text/javascript">
+        function warn() {
+            alert("this is promt box");
+            //document.write("warning");
+        }
+        function conf() {
+            ret = confirm("do you want to continue?");
+            if (ret == true) {
+                document.write("user wants");
+                return true;
+            }
+            else {
+                document.write("does not want");
+                return false;
+            }
+        }
+        function getval() {
+            ret = prompt("enter your name?");
+
+            document.write("your Name is" + ret);
+
+
+        }
+    </script>
+</head>
+
+<body>
+    <input type="button" onclick="warn()" value="Alert Box" />
+    <input type="button" onclick="conf()" value="Confirm box" />
+    <input type="button" onclick="getval()" value="promt box" />
+</body>
+
+</html> -->
+
+
+<!-- QB-4 -->
+<!-- <html>
+    <head>
+        <script>
+            function calculateSeries(x, n) {
+                let result = 0;
+                let sign = 1;
+            
+                for (let i = 0; i <= n; i++) {
+                    result += sign * Math.pow(x, i);
+                    sign *= -1; // Alternate the sign for each term
+                }
+            
+                return result;
+            }
+            
+            // Example usage:
+            const xValue = 2; // Replace with your desired value of x
+            const nValue = 5; // Replace with your desired value of n
+            
+            const seriesSum = calculateSeries(xValue, nValue);
+            document.write(`Sum of the series for x = ${xValue} and n = ${nValue} is: ${seriesSum}`);
+            
+        </script>
+    </head>
+</html> -->
+
+
+
+<!-- QB-9-Create a function that takes an array of objects (groceries) which calculates the total price and returns it as a number. A grocery object has a product, a quantity and a price. -->
+<!-- <html>
+    <head>
+        <script>
+            function calculateTotalPrice(groceries) {
+                let totalPrice = 0;
+            
+                for (const item of groceries) {
+                    const { quantity, price } = item;
+                    totalPrice += quantity * price;
+                }
+            
+                return totalPrice;
+            }
+            
+            // Example usage:
+            const groceriesList = [
+                { product: "Apples", quantity: 3, price: 1.5 },
+                { product: "Bananas", quantity: 2, price: 0.75 },
+                { product: "Milk", quantity: 1, price: 2.0 }
+            ];
+            
+            const total = calculateTotalPrice(groceriesList);
+            document.write(`Total price: $${total.toFixed(2)}`);
+            
+        </script>
+    </head>
+</html> -->
+
+
+<!-- QB-10 -->
+<!-- <html>
+    <head>
+        <script>
+            function countOccurrences(str, char) {
+                let count = 0;
+            
+                for (let i = 0; i < str.length; i++) {
+                    if (str.charAt(i) === char) {
+                        count++;
+                    }
+                }
+            
+                return count;
+            }
+            
+            // Example usage:
+            const userString = prompt("Enter a string:");
+            const targetChar = prompt("Enter the character to count:");
+            
+            const occurrences = countOccurrences(userString, targetChar);
+            document.write(`The character '${targetChar}' appears ${occurrences} times in the string.`);
+            
+        </script>
+    </head>
+</html> -->
+
+
+<!-- QB-26 -->
+<!-- <html>
+    <head>
+        <script>
+            function isArmstrong(num) {
+                const digits = [...num.toString()];
+                let result = 0;
+                const power = digits.length;
+            
+                for (const digit of digits) {
+                    result += Math.pow(parseInt(digit), power);
+                }
+                
+                if (result === parseInt(num)) {
+                    return "Is Armstrong";
+                } else {
+                    return "Not Armstrong";
+                }
+            }
+            
+            // Example usage:
+            const userNumber = prompt("Enter a positive integer:");
+            document.write(isArmstrong(userNumber));
+            
+        </script>
+    </head>
+</html> -->
+
+
+<!-- QB-46 -->
+<!-- <html>
+    <head>
+        <script>
+            function isPrime(num) {
+                if (num <= 1) {
+                    return false;
+                }
+                for (let i = 2; i <= Math.sqrt(num); i++) {
+                    if (num % i === 0) {
+                        return false;
+                    }
+                }
+                return true;
+            }
+            
+            function generateFirstNPrimes(n) {
+                const primes = [];
+                let currentNumber = 2;
+            
+                while (primes.length < n) {
+                    if (isPrime(currentNumber)) {
+                        primes.push(currentNumber);
+                    }
+                    currentNumber++;
+                }
+            
+                return primes;
+            }
+            
+            const first10Primes = generateFirstNPrimes(10);
+            console.log("First 10 prime numbers:", first10Primes);
+            
+        </script>
+    </head>
+</html> -->
+
+
+
+<!-- QB-42 -->
+<!-- <html>
+
+<head>
+    <title>QB-469
+    </title>
+</head>
+
+<body>
+    <h6>Write a javascript to accept a number to check whether it is greater than 100 or not?
+    </h6>
+    <script type="text/javascript">
+        no = prompt("enter no");
+        if (no > 100)
+            document.write("no greater than 100");
+        else
+            document.write("no not greater than 100");
+    </script>
+</body>
+
+</html> -->
+
+
+
+<!-- QB-43 -->
+<!-- <html>
+
+<head>
+</head>
+
+<body>
+    <script type="text/javascript">
+        n = 23; mul = 0;
+        m = n % 10;
+        n = parseInt(n / 10);
+        mul = Math.pow(n, m);
+        document.write("answer is :-" + mul);
+
+    </script>
+</body>
+
+</html> -->
+
+
+
+<!-- QB-45 -->
+<!-- <html>
+
+<body>
+    <script>
+        var s = "India"
+
+        for (var i = 0; i < s.length ; i++) {
+
+            if (i % 2 == 0) {
+
+                console.log(s[i])
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html> -->
+
+
+
+<!-- QB-50 -->
+<!-- <html>
+
+<head>
+    <title>QB-484
+    </title>
+    <script type="text/javascript">
+        function affortIt(price, taxrate, balance) {
+            var total = price + price * taxrate;
+            if (total <= balance) { alert("yes"); }
+            else { alert("no"); }
+        }
+    </script>
+
+</head>
+
+<body>
+    <h6>Write a function that takes 3 parameters, price, tax rate, balance, and prints yes in an alert box if someone
+        has adequate balance to purchase an item at the specified price with the given tax rate. Otherwise, print out no
+        in an alert box
+    </h6>
+    <script>
+        affortIt(100, 2, 500);
+    </script>
+</body>
+
+</html> -->
+
+
+
+
+<!-- QB-51 -->
+<!-- <html>
+
+<head>
+    <title>QB-485
+    </title>
+
+
+</head>
+
+<body>
+    <h6>Write an HTML and JavaScript program which accepts N as input and print first N odd numbers
+    </h6>
+    <script type="text/javascript">
+        val = prompt("enter n");
+        for (i = 1; i <= 2*val; i++) {
+            if (i % 2 != 0)
+                document.write(i + " ");
+        }
+    </script>
+</body>
+
+</html> -->
+
+
+
+<!-- QB-52 -->
+<!-- <html>
+
+<head>
+    <title>QB-486
+    </title>
+
+
+</head>
+
+<body>
+    <h6>Write a JavaScript to check input string is palindrome or not.
+
+    </h6>
+    <script type="text/javascript">
+        str = "abba abba";
+        document.write(str);
+        str1 = str.split('');
+        str2 = str1.reverse();
+        str3 = str2.join('');
+
+        document.write(str3);
+
+        if (str == str3)
+            document.write("palindrom");
+        else
+            document.write(" not palindrom");
+
+    </script>
+</body>
+
+</html> -->
+
+
+
+<!-- QB-53 -->
+<!-- <html>
+
+<head>
+    <title>QB-487
+    </title>
+
+
+</head>
+
+<body>
+    <h6>"Write JavaScript code to print following pattern.
+        1
+        0 1
+        1 0 1
+        0 1 0 1
+        1 0 1 0 1
+
+
+    </h6>
+    <script type="text/javascript">
+        for (i = 0; i < 5; i++) {
+            for (j = 0; j < i; j++) {
+                if ((i + j) % 2 == 0)
+                    document.write("0");
+                else
+                    document.write("1");
+            }
+            document.write("<br/>");
+        }
+
+
+    </script>
+</body>
+
+</html> -->
+
+
+<!-- QB-54  -->
+<!-- <html>
+
+<body>
+    <script>
+        const num1 = parseInt(prompt("Enter first number: "));
+        const num2 = parseInt(prompt("Enter second number: "));
+        const num3 = parseInt(prompt("Enter third number: "));
+        let largest;
+
+        // check the condition
+        if (num1 >= num2 && num1 >= num3) {
+            largest = num1;
+        }
+        else if (num2 >= num1 && num2 >= num3) {
+            largest = num2;
+        }
+        else {
+            largest = num3;
+        }
+
+        // display the result
+        console.log("The largest number is " + largest);
+    </script>
+
+</body>
+
+</html> -->
+
+
+<!-- QB-55 -->
+<!-- <html>
+
+<head>
+    <title>
+    </title>
+
+
+</head>
+
+<body>
+    <h6>Write a JavaScript program which accepts N as input and print N Fibonacci numbers as list.
+
+    </h6>
+    <script type="text/javascript">
+        a = 0, b = 1, c = 1;
+        n = prompt("enter n");
+        document.write(a + " ");
+        document.write(b + " ");
+
+        for (i = 3; i <= n; i++) {
+            c = a + b;
+            document.write(c + " ");
+            a = b;
+            b = c;
+        }
+    </script>
+</body>
+
+</html> -->
+
+
+
+<!-- QB-56 -->
+<!-- <html>
+
+<body>
+    <script>
+        function reverseDigits(num) {
+            let rev = 0;
+            while (num > 0) {
+                rev = rev * 10 + num % 10;//21
+                num = parseInt(num / 10, 10);//1
+            }
+            return rev;
+        }
+
+        function square(num) {
+            return (num * num);
+        }
+
+        function checkAdamNumber(num) {
+            let a = square(num);//144
+            let b = square(reverseDigits(num));//21//441
+
+            if (a == reverseDigits(b))//144
+                document.write(num + "<br>");
+
+        }
+
+
+        for (i = 1; i <= 100; i++) {
+            checkAdamNumber(i)
+        }
+
+
+    </script>
+
+</body>
+
+</html> -->
+
+
+
+
+<!-- QB-58 -->
+<!-- <html>
+
+<body>
+    <script>
+        function is_perfect(number) {
+            var temp = 0;
+            for (var i = 1; i <= number / 2; i++) {
+                if (number % i === 0) {
+                    temp += i;
+                }
+            }
+
+            if (temp === number && temp !== 0) {
+                console.log("It is a perfect number.");
+            }
+            else {
+                console.log("It is not a perfect number.");
+            }
+        }
+        is_perfect(28);
+
+    </script>
+
+</body>
+
+</html> -->
+
+
+<!-- QB-7-CHP-10 -->
+<!-- <html>
+    <head>
+        <script>
+            function computeSums(...numbers) {
+                let oddSum = 0;
+                let evenSum = 0;
+            
+                for (const num of numbers) {
+                    if (num % 2 === 0) {
+                        evenSum += num;
+                    } else {
+                        oddSum += num;
+                    }
+                }
+            
+                return {
+                    oddSum,
+                    evenSum
+                };
+            }
+            
+            // Example usage:
+            const { oddSum, evenSum } = computeSums(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+            console.log(`Sum of odd numbers: ${oddSum}`);
+            console.log(`Sum of even numbers: ${evenSum}`);
+            
+        </script>
+    </head>
+</html> -->
+
+
+<!-- QB-11-CHP-10 -->
+<!-- <html>
+    <head>
+        <script>
+            const arr1 = [1, 2, 3];
+const arr2 = [4, 5, 6];
+const arr3 = [7, 8, 9];
+
+// Concatenate arrays using the spread operator
+const concatenatedArr = [...arr1, ...arr2, ...arr3];
+
+console.log(concatenatedArr);
+// Output: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+        </script>
+    </head>
+</html> -->
+
+
+
+
+<!-- QB-12-CHP-10 -->
+<!-- <html>
+    <head>
+        <script>
+            const names = ["Alice", "Bob", "Eve", "David", "Carol"];
+
+// Sort the names alphabetically
+const sortedNames = [...names].sort();
+
+console.log("Sorted names:", sortedNames);
+// Output: Sorted names: [ 'Alice', 'Bob', 'Carol', 'David', 'Eve' ]
+
+        </script>
+    </head>
+</html> -->
+
+
+
+
+<!-- QB-18-CHP-10 -->
+<!-- <html>
+
+<head>
+</head>
+
+<body>
+    <script>
+        function fun(bg, tx, size = "50px", fs = "italic") {
+            i = document.getElementById("d1");
+            i.style.color = tx;
+            i.style.fontStyle = fs;
+            i.style.backgroundColor = bg;
+            i.style.fontSize = size;
+        }
+    </script>
+    <div id="d1">Hello</div>
+    <input type="submit" onclick="fun('pink','blue')" value="CLICK HERE" />
+</body> -->
+
+
+
+<!-- QB-22-CHP-10 -->
+<!-- <html>
+
+<head>
+    <script>
+        // Calculate perimeter of a triangle
+        const trianglePerimeter = (sideA, sideB, sideC) => sideA + sideB + sideC;
+
+        // Calculate area of a triangle using Heron's formula
+        const triangleArea = (base, height) => 0.5 * base * height;
+
+        // Example usage:
+        const a = 5;
+        const b = 6;
+        const c = 8;
+        console.log(`Triangle Perimeter: ${trianglePerimeter(a, b, c)}`);
+        console.log(`Triangle Area: ${triangleArea(b, 4)}`); // Assuming height is 4
+
+    </script>
+</head>
+
+</html> -->
+
+
+
+<!-- QB-23-CHP-10 -->
+<!-- <html>
+
+<head>
+    <script>
+        class time {
+            constructor(hour, min, sec) {
+                this.hour = hour;
+                this.min = min;
+                this.sec = sec;
+            }
+            timer() {
+                var t = new time();
+                t.hour = t1.hour + t2.hour;
+                t.min = t1.min + t2.min;
+                t.sec = t1.sec + t2.sec;
+                if (t.sec > 60) {
+                    t.sec %= 60;
+                    t.min++;
+
+                }
+                if (t.min > 60) {
+                    t.min %= 60;
+                    t.hour++;
+
+                }
+                return t;
+
+            }
+        }
+        var t1 = new time(1, 50, 50);
+        var t2 = new time(2, 30, 50);
+        console.log(t1.timer());
+    </script>
+</head>
+
+</html> -->
+
+
+
+
+<!-- QB-40 -->
+<!-- <html>
+    <head>
+        <script>
+            const calculateDistance = (point1, point2) => {
+                const dx = point2.x - point1.x;
+                const dy = point2.y - point1.y;
+                return Math.sqrt(dx ** 2 + dy ** 2);
+            };
+            
+            // Example usage:
+            const p1 = { x: 1, y: 2 };
+            const p2 = { x: 5, y: 6 };
+            const distanceP1P2 = calculateDistance(p1, p2);
+            console.log(`Distance between p1 and p2: ${distanceP1P2}`);
+            
+        </script>
+    </head>
+</html> -->
+
+
+
+<!-- QB-41 -->
+<!-- <html>
+    <head>
+        <script>
+            function isPrimeNumber(num) {
+                // A number is prime if it is not divisible by any number from 2 to its square root
+                if (num <= 1) return false;
+                const sqrtNum = Math.sqrt(num);
+                for (let i = 2; i <= sqrtNum; i++) {
+                    if (num % i === 0) {
+                        return false;
+                    }
+                }
+                return true;
+            }
+            
+            function findPrimesInRange(lower, upper) {
+                const primes = [];
+                for (let num = lower; num <= upper; num++) {
+                    if (isPrimeNumber(num)) {
+                        primes.push(num);
+                    }
+                }
+                return primes;
+            }
+            
+            // Example usage:
+            const lowerNumber = 2;
+            const higherNumber = 10;
+            const primeNumbers = findPrimesInRange(lowerNumber, higherNumber);
+            console.log(`The prime numbers between ${lowerNumber} and ${higherNumber} are:`, primeNumbers);
+            
+        </script>
+    </head>
+</html> -->
+
+
+
+<!-- QB-42 -->
+<!-- <html>
+    <head>
+        <script>
+            function findSecondLargest(arr) {
+                let max = -Infinity;
+                let secondMax = -Infinity;
+            
+                for (const num of arr) {
+                    if (num > max) {
+                        // Update both max and secondMax
+                        secondMax = max;
+                        max = num;
+                    } else if (num > secondMax && num !== max) {
+                        // Update only secondMax
+                        secondMax = num;
+                    }
+                }
+            
+                return secondMax;
+            }
+            
+            // Example usage:
+            const numbers = [10, 30, 35, 20, 30, 25, 90, 89];
+            const secondLargest = findSecondLargest(numbers);
+            console.log(`The second largest number is: ${secondLargest}`);
+            
+        </script>
+    </head>
+</html> -->
+
+
+<!-- QB-44 -->
+<!-- <html>
+    <head>
+        <script>
+            let gcd = (num1, num2) => {
+                // Loop until both numbers are not equal
+                while (num1 !== num2) {
+                    // Check if num1 > num2
+                    if (num1 > num2) {
+                        // Subtract num2 from num1
+                        num1 -= num2;
+                    } else {
+                        // Subtract num1 from num2
+                        num2 -= num1;
+                    }
+                }
+                return num2;
+            };
+            
+            // Example usage:
+            console.log(gcd(60, 15)); // Output: 15
+            console.log(gcd(36, 60)); // Output: 12
+            
+        </script>
+    </head>
+</html> -->
+
+
+
+
+<!-- QB-10-chp9 -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Textfield to Paragraph</title>
+</head>
+<body>
+    <input type="text" id="myInput" placeholder="Enter text">
+    <p id="outputParagraph"></p>
+
+    <script>
+        const inputField = document.getElementById('myInput');
+        const outputParagraph = document.getElementById('outputParagraph');
+
+        // Event listener for losing focus (onblur)
+        inputField.onblur = function() {
+            const inputValue = inputField.value;
+            const lowercaseValue = inputValue.toLowerCase();
+            outputParagraph.innerHTML = lowercaseValue;
+            inputField.style.backgroundColor = 'red';
+        };
+    </script>
+</body>
+</html> -->
+
+
+<!-- QB-9-chp-9 -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key Events</title>
+</head>
+<body>
+    <p>Press any key:</p>
+
+    <script>
+        function fun(event) {
+            const key = event.key.toLowerCase();
+            if (key === 'a' || key === 'e' || key === 'i' || key === 'o' || key === 'u') {
+                console.log(`Vowel "${key}" is pressed!`);
+            }
+        }
+
+        function changeBackgroundColor() {
+            document.body.style.backgroundColor = 'blue';
+        }
+
+        // Attach the functions to the window object
+        window.fun = fun;
+        window.changeBackgroundColor = changeBackgroundColor;
+    </script>
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Registration Form</title>
+    <script>
+        function formValidation() {
+            var uid = document.getElementById("uid").value;
+            var passid = document.getElementById("pid").value;
+            var uemail = document.getElementById("eid").value;
+
+            // Validate username (minimum 5 and maximum 10 characters, no special characters at the start)
+            if (uid.length < 5 || uid.length > 10 || /^[^a-zA-Z]/.test(uid)) {
+                alert("Username must be between 5 and 10 characters and should not start with special characters.");
+                return false;
+            }
+
+            // Validate password (at least one digit and one special character)
+            if (!/\d+[^a-zA-Z]+/.test(passid)) {
+                alert("Password must contain at least one digit and one special character.");
+                return false;
+            }
+
+            // Validate email (proper email syntax)
+            if (!/\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(uemail)) {
+                alert("Please enter a valid email address (e.g., xyz.pqr@mnp.co.in).");
+                return false;
+            }
+
+            alert("Password Entered: " + passid);
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h1>Registration Form</h1>
+    <form name="registration" onsubmit="return formValidation();">
+        <label for="userid">User ID:</label>
+        <input type="text" name="userid" size="12" id="uid"><br>
+
+        <label for="passid">Password:</label>
+        <input type="password" name="passid" size="12" id="pid"><br>
+
+        <label for="email">Email:</label>
+        <input type="text" name="email" size="50" id="eid"><br>
+
+        <input type="submit" name="submit" value="Submit">
+    </form>
+</body>
+</html> -->
+
+
+
+
+
+<!-- <html>
+    <head>
+        <script>
+            function daysUntilChristmas() {
+                // Get the current date
+                let today = new Date();
+            
+                // Create a Date object for Christmas of the current year
+                let christmas = new Date(today.getFullYear(), 11, 25);
+            
+                // Check if the current date is after December 25th
+                if (today.getMonth() === 11 && today.getDate() > 25) {
+                    // If true, set Christmas for the next year
+                    christmas.setFullYear(christmas.getFullYear() + 1);
+                }
+            
+                // Calculate the difference in days between today and Christmas
+                let oneDayMilliseconds = 1000 * 60 * 60 * 24;
+                let remainingDays = Math.round((christmas.getTime() - today.getTime()) / oneDayMilliseconds);
+            
+                return remainingDays;
+            }
+            
+            // Example usage:
+            let daysLeft = daysUntilChristmas();
+            console.log(`There are ${daysLeft} days left until Christmas.`);
+            
+        </script>
+    </head>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Mouse Event Handling</title>
+    <script>
+        var a = true + true + true * 3; 
+        console.log(a)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
+

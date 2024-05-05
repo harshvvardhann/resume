@@ -1,0 +1,1073 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root{
+    --bg-color:#081b29;
+    --second-bg-color:#112e42;
+    --text-color:#ededed;
+    --main-color:#00abf0;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    /* By setting overflow-x to hidden, essentially ensuring that any content wider than the html element's width will not be visible, providing a cleaner layout without horizontal scrollbars.
+ */
+}
+
+body{
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+.header{
+    position: fixed;/*The element will remain fixed in its position even if the user scrolls the page.position: sticky; allows an element to scroll with the page until a defined point*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;/*top bottom- left right*/
+    background: transparent;/*Sets the background of the header to transparent. This allows any background color or image of the underlying content to show through.*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    transition: .3s;/* it applies to any CSS properties that change when the header is interacted with, such as hover effects or state changes.*/
+}
+
+/* ABout the text Rajput Harshvardhan Singh */
+.logo{
+    position: relative;
+    font-size: 2.5rem;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+
+.navbar a{
+    font-size: 1.7rem;
+    color: var(--text-color);
+    font-weight: 500;
+    margin-left: 3.5rem;
+    transition: 1s;
+}
+
+.navbar a:hover,
+.navbar a.active{
+    color: var(--main-color);/*on hover the navbar elements will transition to blue color in 1 sec and bydefault the active element will be blue.*/
+}
+
+/* MENU ICON so that when the page size is reduced the navbar items will convert into menu */
+#menu-icon{
+    position: relative;
+    font-size: 3.6rem;
+    color: var(--text-color);
+    cursor: pointer;
+    display: none;
+}
+
+section{
+    min-height: 100vh;/*This property sets the minimum height of the <section> elements to 100 viewport height units (vh). This ensures that each <section> will take up at least the full height of the viewport, regardless of the content inside it. It helps ensure that each section fills the entire screen, providing a consistent layout experience.*/
+    padding: 10rem 9% 2rem;/*This property sets the padding for the <section> elements. Padding is the space between the content of an element and its border./* Top padding, right padding, bottom padding */
+}
+
+/* displaying the whole home section  content in center of the screen slightly towards left*/
+.home{
+    display: flex;
+    align-items: center;
+    padding: 0 9%;
+    background: none;
+}
+
+.home-content{
+    max-width: 60rem;/*So that it could not touch to image and looks good*/
+    z-index: 99;
+}
+
+
+
+.home-content h1{
+    position: relative;
+    display: inline-block;
+    font-size: 5.6rem;
+    font-weight: 700;
+    line-height: 1.3;/*This property sets the line height of the <h1> elements to 1.3 times the font size.*/
+}
+
+.home-content .text-animate{
+    position: relative;
+    width: 37.8rem;
+}
+
+
+.home-content .text-animate h3{
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: transparent;/*This property sets the color of the text within the <h3> elements to transparent, effectively making the text invisible.*/
+    -webkit-text-stroke: .7px var(--main-color);/*This property applies a stroke (outline) to the text of the <h3> elements. The stroke has a width of 0.7 pixels and a color defined by the --main-color variable.*/
+    background-image: linear-gradient(var(--main-color),var(--main-color));/*This property sets a background image for the <h3> elements using a linear gradient. The gradient starts and ends with the same color, which is defined by the --main-color variable. Essentially, it creates a solid background color for the text.*/
+    background-repeat: no-repeat;/*This property specifies that the background image should not repeat.*/
+    -webkit-background-clip: text;
+    background-position: -53rem 0;/*This property sets the initial position of the background image. In this case, it is positioned 33 rems to the left of its initial position.*/
+}
+
+.home-content p{
+    position: relative;
+    font-size: 1.6rem;
+    margin: 2rem 0 4rem;/*top left-right bottom  in home-content*/ 
+}
+
+/* a box outside the both button with specific width and height and space between the content*/
+.btn-box{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 34.5rem;
+    height: 5rem;   
+}
+
+.btn-box .btn{
+    position: relative;
+    display: inline-flex;
+    justify-content: center;/*This property centers the content horizontally within the buttons.*/
+    align-items: center;/*This property centers the content vertically within the buttons.*/
+    width: 15rem;
+    height: 100%;
+    background: var(--main-color);
+    border: .2rem solid var(--main-color);
+    border-radius: .8rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    color:var(--bg-color);  
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s;
+}
+
+
+/* Overall, when you hover over a button inside .btn-box, the pseudo-element ::before expands horizontally from the left to cover the entire width of the button, creating a background effect. The transition property ensures that this expansion happens smoothly over a duration of 0.5 seconds, adding a nice visual effect to the button interaction. */
+.btn-box .btn::before{
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--bg-color);
+    z-index: -1;
+    transition: .5s;
+}
+
+.btn-box .btn:hover::before{
+    width: 100%;
+}
+
+.btn-box .btn:nth-child(2){/*at first the 2nd button is made transparent*/
+    background: transparent;
+    color: var(--main-color);
+}
+
+.btn-box .btn:hover{
+    color: var(--main-color);
+}
+
+.btn-box .btn:nth-child(2):hover{
+    color: var(--bg-color);
+}
+
+.btn-box .btn:nth-child(2)::before{
+    background: var(--main-color);
+}
+
+
+/* ICONS OF SOCIAL MEDIA */
+.home-sci{
+    position: absolute;
+    bottom: 4rem;
+    width: 170px;
+    display: flex;
+    justify-content: space-between;   
+}
+
+.home-sci a{
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: .2rem solid var(--main-color);
+    border-radius: 50%;
+    font-size: 20px;
+    color: var(--main-color);
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.home-sci a:hover{
+    color: var(--bg-color);
+}
+
+/* this simply does that it hase given the background but not width so when hover it's width expanded in 0.5 sec so it looks like animation or can say transition of color */
+.home-sci a::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:0;
+    height: 100%;
+    background: var(--main-color);
+    z-index: -1;
+    transition:.5s;
+}
+
+.home-sci a:hover::before{
+    width: 100%;
+}
+
+
+
+
+.header.sticky{
+    background: var(--bg-color);
+}    
+.navbar{
+    position: relative;
+}    
+
+
+
+
+.home::after {
+    content: "";
+    position: absolute;
+    top: 50%; 
+    right: 7%; 
+    transform: translateY(-50%); /* Center it vertically */
+    width: 500px; 
+    height: 500px; 
+    border-radius: 50%; 
+    background-image: url('img5.jpg'); 
+    background-size: cover;
+    background-position: center;
+    z-index: -1; 
+    border: 2px solid var(--main-color);
+}    
+
+
+
+.home-content h1 span{
+    color: var(--text-color);
+}    
+
+.home.show-animate .home-content .text-animate h3{
+    animation: homeBgText 6s linear infinite;
+    animation-delay: 2s;
+}    
+
+.home-content .text-animate h3::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    border-right: 2px solid var(--main-color);
+    z-index: -1;
+}    
+
+.home.show-animate .home-content .text-animate h3::before{
+    animation: homeCursorText 6s linear infinite;
+    animation-delay: 2s;
+}    
+
+
+
+/* ABOUT */
+
+.about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    background: var(--second-bg-color);
+    padding-bottom: 6rem;
+}
+
+/* CSS in ABout Me */
+.heading{
+    position: relative;
+    font-size: 5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+span{
+    color:var(--main-color)
+}
+
+
+.about-img{
+    position: relative;
+    width: 25rem;
+    height: 25rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-img img{
+    width: 90%;
+    border-radius: 50%;
+    border: .2rem solid var(--main-color);
+}
+
+.about-img .circle-spin{
+    position: absolute;/*This property positions the .circle-spin element relative to its closest positioned ancestor (in this case, the .about-img container).*/
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotate(0);/*This combination of transform properties centers the element precisely at its midpoint by translating it -50% horizontally and -50% vertically, and it sets the initial rotation to 0 degrees.*/
+    width: 90%;/*These properties set the dimensions of the spinning circle to 90% of the width and height of its container, ensuring it fits inside the container with some padding around the edges.*/
+    height: 90%;
+    border-radius: 50%;/*This property creates a circular shape for the spinning circle by setting its border-radius to 50%.*/
+    border-top: .2rem solid var(--second-bg-color);
+    border-bottom: .2rem solid var(--second-bg-color);
+    border-right: .2rem solid var(--main-color);
+    border-left: .2rem solid var(--main-color);
+    animation: aboutSpinner 8s linear infinite;/*8s indicates that the animation duration is 8 seconds. This means that the animation will take 8 seconds to complete one cycle. */
+}
+
+
+.about-content{
+    text-align: center;
+}
+
+.about-content h3{
+    position: relative;
+    display: inline-block;
+    font-size: 2.6rem;
+}
+
+.about-content p{
+    position: relative;
+    font-size: 1.6rem;
+    margin: 2rem 0 3rem;
+}
+
+
+.btn-box.btns{
+    display: inline-block;
+    width: 15rem;
+}
+
+.btn-box.btns a::before{
+    background: var(--second-bg-color);
+}
+
+#about-text {
+    overflow: hidden;
+    max-height: 4.5em; /* Adjust as needed */
+    transition: max-height 0.3s ease;
+}
+
+#about-text.show-all {
+    max-height: none;
+}
+
+ /* Add animation for the "Read More" button */
+ #read-more-btn {
+    transition: transform 0.3s ease;
+}
+
+
+
+
+
+
+
+/* EDUCATION */
+
+.education{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: auto;
+    padding-bottom: 5rem;
+}
+
+
+.education .education-row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15rem;
+}
+
+
+.education-row .education-column{
+    flex: 1 1 40rem;
+}
+
+.education-column .title{
+    position: relative;
+    display: inline-block;
+    font-size: 2.5rem;
+    margin: 0 0 1.5rem 2rem;
+}
+
+
+.education-column .education-box{
+    position: relative;
+    border-left: .2rem solid var(--main-color);
+}
+
+
+.education-box .education-content{
+    position: relative;
+    padding-left: 2.5rem;
+}
+
+.education-content .content{
+    position: relative;
+    padding: 1.5rem;
+    border: .2rem solid var(--main-color);
+    border-radius: 2rem;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.education-content .content .year{
+    font-size: 1.5rem;
+    color: var(--main-color);
+    padding-bottom: .5rem;
+}
+
+.education-content .content .year i{
+    padding-right: .5rem;
+}
+
+.education-content .content h3{
+    font-size: 2rem;
+}
+
+.education-content .content p{
+    font-size: 1.6rem;
+    padding-top: .5rem;
+}
+
+
+.education-box .education-content::before{
+    content:'';
+    position: absolute;
+    top: 0;
+    left: -1.1rem;
+    width: 2rem;
+    height: 2rem;
+    background: var(--main-color);
+    border-radius: 50%;
+}
+
+
+
+.education-content .content::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background:var(--second-bg-color);
+    z-index: -1;
+    transition: .5s;
+}
+
+.education-content .content:hover::before{
+    width: 100%;
+}
+
+
+
+
+
+
+/* SKILLS */
+
+/* Sets the minimum height of the element to adjust automatically based on its content.
+Adds padding at the bottom of the element to create space.
+Applies a background color using a custom CSS variable. */
+.skills{
+    min-height: auto;
+    padding-bottom: 7rem;
+    background: var(--second-bg-color);
+}
+
+.skills .skills-row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+}
+
+
+.skills-row .skills-column{
+    flex: 1 1 40rem;
+}
+
+
+.skills-column .title{
+    position: relative;
+    display: inline-block;
+    font-size: 2.5rem;
+    margin: 0 0 1.5rem;
+}
+
+
+
+.skills-box .skills-content{
+    position: relative;
+    border: .2rem solid var(--main-color);
+    border-radius: .6rem;
+    padding: .5rem 1.5rem;
+    z-index: 1;
+    overflow: hidden;
+}
+
+
+.skills-content .progress{
+    padding: 1rem 0;
+}
+
+
+.skills-content .progress h3{
+    font-size: 1.7rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* Putting it all together, when you apply transform: translateX(-50%); along with left: 50%; to an inline-block element like an <h2>, it effectively centers the element horizontally within its parent container. This technique is commonly used for horizontally centering elements, especially when their width is dynamic or unknown. */
+.skills h2{
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);/*as by doing right:50% was not working so tried using transform*/
+}
+
+
+.skills-column .skills-box{
+    position: relative;
+}
+
+
+/* his targets the pseudo-element ::before of elements with the class .skills-content that are within elements with the class .skills-box.
+It creates a pseudo-element before the content of .skills-content.
+This property is used to insert content before the element, in this case, an empty string.
+Initially, the pseudo-element has no width (0) but stretches the full height of its parent .skills-content.
+Sets the background color of the pseudo-element to a custom variable --bg-color.
+Places the pseudo-element behind the content of .skills-content.
+Adds a smooth transition effect over a duration of 0.5s.
+This targets the pseudo-element ::before of .skills-content when it's hovered over..
+*/
+
+/* In summary, this code creates a hover effect where the background color of .skills-content extends from left to right, smoothly transitioning from its initial width of 0 to 100% over 0.5s. */
+.skills-box .skills-content::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--bg-color);
+    z-index: -1;
+    transition: .5s;
+}
+
+.skills-box .skills-content:hover::before{
+    width: 100%;
+}
+
+
+/* In summary, this code creates stylish progress bars with rounded corners, border, and a customizable fill color defined by the --main-color variable. */
+.skills-content .progress .bar{
+    height: 2.5rem;
+    border-radius: .6rem;
+    border: .2rem solid var(--main-color);
+    padding: .5rem;
+    margin: 1rem 0;
+}
+
+/* In this context, the <span> element is used within the progress bar to represent the filled portion of the progress. Here's why <span> is used:
+By default, <span> is an inline-level element, but when set to display: block;, as in this case, it behaves like a block-level element. This allows it to fill the entire width of its container, effectively representing the progress visually.
+ is a versatile inline element that can be styled easily using CSS. By setting its background color and dimensions, it serves as a customizable visual indicator of progress. */
+.skills-content .progress .bar span{
+    display: block;
+    height: 100%;
+    border-radius: .3rem;
+    background: var(--main-color);
+}
+
+.span1{
+    width: 60%;
+}
+.span2{
+    width: 60%;
+}
+.span3{
+    width: 40%;
+}
+.span4{
+    width: 70%;
+}
+.span5{
+    width: 50%;
+}
+.span6{
+    width: 50%;
+}
+.span7{
+    width: 85%;
+}
+.span8{
+    width: 90%;
+}
+
+
+
+/* Contact section */
+
+/* Sets the minimum height of the contact section to auto and adds padding at the bottom to create space. */
+.contact{
+    min-height: auto;
+    padding-bottom: 7rem;
+}
+
+
+/* Set maximum width of the contact form to 70rem and center it horizontally using margin: 0 auto.
+Align text in the form center. */
+.contact form{
+    max-width: 70rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Utilize flexbox to arrange input fields evenly with space between them, allowing for a responsive layout.
+Enable wrapping to ensure proper display on smaller screens. */
+.contact form .input-box{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* Align the heading horizontally to the center of its container using display: inline-block and transform: translateX(-50%). */
+.contact h2{
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+/* Set up input fields with relative positioning, occupying 49% of the width within the input box and displaying placeholders.
+Style input fields and textareas with consistent dimensions, padding, font size, colors, border radius, and border properties. */
+.contact form .input-box .input-field{
+    position: relative;
+    width: 49%;
+    margin: .8rem 0;
+}
+
+
+/* Create a focus effect using an absolutely positioned pseudo-element (.focus) to highlight the active input field or textarea.
+When an input field or textarea receives focus or contains valid content, expand the focus effect to full width. */
+.contact form .input-box .input-field input,
+.contact form .textarea-field textarea {    
+    width: 100%;
+    height: 100%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    background: transparent;
+    border-radius: .6rem;
+    border: .2rem solid var(--main-color);
+}
+
+/* Apply similar styling to textareas as input fields, ensuring consistent appearance and behavior.
+Prevent textareas from being resized by setting resize: none. */
+.contact form .input-box .input-field input::placeholder,
+.contact form .textarea-field textarea::placeholder{
+    color: var(--text-color);
+}
+
+
+/* Customize button appearance with cursor pointer and provide hover effects for user interactivity.
+The summary does not include the button box and button class styling as it is not provided in the CSS snippet. */
+.contact form .focus{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--second-bg-color);
+    border-radius: .6rem;
+    z-index: -1;
+    transition: .5s;
+}
+
+.contact form .input-box .input-field input:focus~.focus,
+.contact form .input-box .input-field input:valid~.focus,
+.contact form .textarea-field textarea:focus~.focus,
+.contact form .textarea-field textarea:valid~.focus{
+    width: 100%;
+}
+
+.contact form .textarea-field{
+    position: relative;
+    margin: .8rem 0 2.7rem;
+    display: flex;
+}
+
+.contact form .textarea-field textarea{
+    resize: none;
+}
+
+.contact form .btn-box.btns .btn{
+    cursor: pointer;
+}
+
+
+
+/* Footer Part */
+
+/* Utilizes flexbox to create a flexible layout with items spaced evenly along the main axis and centered along the cross axis.
+Padding of 2rem on the top and bottom and 9% on the sides provides spacing and responsiveness. */
+.footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem 9%;
+    background: var(--second-bg-color);
+}
+
+.footer-text,
+.footer-iconTop{
+    position: relative;
+}
+
+/* Positions footer text relatively for easy alignment adjustments.
+Sets font size for paragraphs to 1.6rem. */
+.footer-text p{
+    font-size: 1.6rem;
+}
+
+.footer-iconTop a{
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: .8rem;
+    background: var(--main-color);
+    border: .2rem solid var(--main-color);
+    border-radius: .6rem;
+    z-index: 1;
+    overflow: hidden;
+}
+
+
+/* Positions social media icons relatively within the footer.
+Uses inline-flex for the icon container, allowing for centering of the icons both horizontally and vertically.
+Applies padding, background color, border, and border-radius to style the icon container.
+Uses pseudo-element (::before) to create a hover effect that expands the background color horizontally.
+Sets transition duration for smooth hover effects. */
+.footer-iconTop a::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background:var(--second-bg-color);
+    z-index: -1;
+    transition: .5s;
+}
+.footer-iconTop a:hover::before{
+    width: 100%;
+}
+/* Sets font size for icons to 2.4rem and transitions the color for hover effects.
+When hovered over, changes the icon color to match the background color of the icon container, creating a contrasting effect. */
+.footer-iconTop a i{
+    font-size: 2.4rem;
+    color: var(--bg-color);
+    transition: .5s;
+}
+
+.footer-iconTop a:hover i{
+    color: var(--main-color);
+}
+
+
+
+
+
+/* ANIMATION RELOAD AND SCROLL */
+
+/*  This class defines basic styling for elements with animation, such as positioning, dimensions, background color, and z-index. */
+.animate{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-color);
+    z-index: 98;
+}
+
+.animate.home-img{
+    width: 50%;
+}
+
+
+.logo .animate,
+.navbar .animate,
+#menu-icon .animate,
+.home.show-animate .animate{
+    animation: showRight 1s ease forwards;
+    animation-delay: calc(.3s*var(--i));
+} 
+
+
+
+.animate.scroll{
+    transition: 1s ease;
+    transition-delay: calc(.3s / var(--i));
+    animation: none;
+}
+
+/* These selectors target specific sections and the footer for scroll animation, changing their background color to var(--second-bg-color) when scrolling. */
+section:nth-child(odd) .animate.scroll,
+.footer .animate.scroll{
+    background: var(--second-bg-color);
+}
+
+
+/*  This rule adjusts the width of elements with the animate and scroll classes within the education section's box. */
+.education .education-box .animate.scroll{
+    width: 105%;
+}
+
+/* These selectors apply scroll animation to elements within specific sections when those sections have the show-animate class. The transition delay is calculated based on the element's index (--i), and it animates the width of the elements to 0, likely for hiding them during scroll animation. */
+.about.show-animate .animate.scroll,
+    .education.show-animate .animate.scroll,
+    .skills.show-animate .animate.scroll,
+    .contact.show-animate .animate.scroll,
+    .footer.show-animate .animate.scroll{
+        
+    transition-delay: calc(.3s*var(--i));
+    width: 0;
+}
+
+@keyframes homeBgText{
+    0%,10%,100%{
+        background-position: -33rem 0;/*horizontally-vertically*/
+    }
+    65%,85%{
+        background-position: 0 0;
+    }
+}
+
+@keyframes homeCursorText{
+    0%,10%,100%{
+        width: 0;
+    }
+    65%,78%,85%{
+        width: 100%;
+        opacity: 1;
+    }
+
+    75%,81%{
+        opacity: 0;
+    }
+}
+
+@keyframes aboutSpinner{
+    100%{
+        transform: translate(-50%,-50%) rotate(360deg);
+    }
+}
+
+@keyframes showRight{
+    100%{
+        width: 0;
+    }
+}
+
+
+/* BREAKPOINTS */
+@media(max-width:1200px){
+    html{
+        font-size: 55%;
+    }
+}
+
+@media(max-width:991px){
+    .header{
+        padding: 2rem 4%;
+    }
+
+    section{
+        padding: 10rem 4% 2rem;
+    }
+
+    .home{
+        padding: 0 4%;
+    }
+
+    .footer{
+        padding: 2rem 4%;
+    }
+}
+
+@media(max-width:850px){
+    .animate.home-img{
+        width: 55%;
+    }
+}
+
+@media(max-width:768px){
+    .header{
+        background: var(--bg-color);
+    }
+
+    #menu-icon{
+        display: block;
+    }
+
+    .navbar{
+        position: absolute;
+        top: 100%;
+        left: -100%;
+        width: 100%;
+        padding: 1rem 4%;
+        background:var(--main-color);
+        box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
+        transition: .25s ease;
+        transition-delay: .25s;
+        z-index: 1;
+    }
+
+    .navbar.active{
+        transition-delay: 0s;
+        left: 0;
+    }
+
+    .navbar .active-nav{
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: var(--bg-color);
+        border-top: .1rem solid rgba(0,0,0,.2);
+        z-index: -1;
+        transition: .25s ease;
+        transition-delay: 0s;
+    }
+
+    .navbar.active .active-nav{
+        left: 0;
+        transition-delay: .25s;
+    }
+
+    .navbar a{
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+        transform: translateX(-20rem);
+        transition: .25s ease;
+        transition-delay: 0s;
+    }
+
+    .navbar.active a{
+        transform: translateX(0);
+        transition-delay: .25s; 
+    }
+
+    .home-imgHover{
+        pointer-events: none;
+        background: var(--bg-color);
+        opacity: .6;
+    }
+}
+
+
+@media(max-width:520px){
+    html{
+        font-size: 50%;
+    }
+
+    .home-content h1{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .home-sci{
+        width: 160px;
+    }
+
+    .home-sci a{
+        width: 38px;
+        height: 38px;
+    }
+}
+
+
+@media(max-width:462px){
+    .home-content h1{
+        font-size: 5.2rem;
+    }
+
+    .education{
+        padding: 10rem 4% 5rem 5%;
+    }
+
+    .contact form .input-box .input-field{
+        width: 100%;
+    }
+
+    .footer{
+        flex-direction: column-reverse;
+    }
+
+    .footer p{
+        margin-top: 2rem;
+        text-align: center;
+    }
+}
+
+
+@media(max-width:371px){
+    .home{
+        justify-content: center;
+    }
+
+    .home-content{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .home-content h1{
+        font-size: 5rem;
+    }
+}
