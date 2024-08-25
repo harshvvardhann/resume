@@ -51,9 +51,6 @@ If you would like to contribute to the project, please follow these guidelines:
 - Make your changes and test thoroughly.
 - Submit a pull request with a clear description of the changes.
 
-## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## Acknowledgments
 - Inspiration from various portfolio designs.
 - HTML, CSS, and JavaScript communities for their resources and support.
